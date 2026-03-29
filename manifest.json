@@ -1,22 +1,29 @@
 {
   "manifest_version": 3,
-  "name": "Case Searcher",
-  "version": "1.5",
-  "description": "Automatically extracts and searches Customer ID or Order Number on case management pages",
-  "author": "Efat Anan Shekh",
-  "homepage_url": "https://github.com/efatananshekh/Smart-Search-Workflow-Automation-Extension",
+  "name": "Customer Dashboard Launcher",
+  "version": "1.1",
+  "description": "Automatically updates dashboard when viewing different customer order pages",
   "permissions": [
-    "storage"
+    "storage",
+    "tabs"
   ],
+  "host_permissions": [
+    "https://YOUR_DOMAIN_HERE/YOUR_CASE_PATH_HERE/*",
+    "https://YOUR_DOMAIN_HERE/YOUR_CUSTOMER_PATH_HERE/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
-      "matches": ["https://YOUR_DOMAIN_HERE/YOUR_PATH_HERE/*"],
-      "js": ["contentScript.js"],
+      "matches": [
+        "https://YOUR_DOMAIN_HERE/YOUR_CASE_PATH_HERE/*",
+        "https://YOUR_DOMAIN_HERE/YOUR_CUSTOMER_PATH_HERE/*"
+      ],
+      "js": [
+        "content.js"
+      ],
       "run_at": "document_idle"
     }
-  ],
-  "action": {
-    "default_title": "Case Searcher",
-    "default_popup": "popup.html"
-  }
+  ]
 }
