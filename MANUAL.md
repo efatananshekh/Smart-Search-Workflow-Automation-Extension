@@ -1,18 +1,18 @@
-================================================================================
-                    CASE SEARCHER EXTENSION - USER MANUAL
-================================================================================
 
-================================================================================
+                    CASE SEARCHER EXTENSION - USER MANUAL
+
+
+
 1. OVERVIEW
-================================================================================
+
 
 This Chrome extension automates the search process within case management 
 systems. When viewing a case, the extension extracts either the Customer ID or 
 Order Number and automatically performs a search.
 
-================================================================================
+
 2. INSTALLATION
-================================================================================
+
 
 Using the Configuration Script (Recommended):
 
@@ -35,18 +35,18 @@ Load in Chrome:
 3. Click "Load unpacked"
 4. Select the extension folder
 
-================================================================================
+
 3. USAGE
-================================================================================
+
 
 1. Click the extension icon in the Chrome toolbar
 2. Select Customer or Order mode
 3. Navigate to any case view page
 4. Extension automatically extracts and searches
 
-================================================================================
+
 4. TROUBLESHOOTING
-================================================================================
+
 
 Issue: Extension does nothing on case pages
 Solution: Verify URL pattern matches your website in manifest.json
@@ -60,14 +60,13 @@ Solution: Check mode selection (Customer vs Order)
 Issue: Extension not loading
 Solution: Verify manifest.json has valid URL pattern
 
-================================================================================
+
 5. TROUBLESHOOTING
-================================================================================
+
 
 For issues or questions:
 - Open a GitHub issue
 - Contact the author
 
-================================================================================
+
 END OF MANUAL
-================================================================================
