@@ -1,10 +1,10 @@
-================================================================================
+                                                                                
                     CASE SEARCHER EXTENSION - USER MANUAL
-================================================================================
+                                                                                
 
-================================================================================
+                                                                                
 TABLE OF CONTENTS
-================================================================================
+                                                                                
 
 1. OVERVIEW ................................................. Section 1
 2. SYSTEM REQUIREMENTS ..................................... Section 2
@@ -30,9 +30,9 @@ TABLE OF CONTENTS
 10. SUPPORT ................................................ Section 10
 11. VERSION HISTORY ........................................ Section 11
 
-================================================================================
+                                                                                
 SECTION 1: OVERVIEW
-================================================================================
+                                                                                
 
 Case Searcher is a Chrome extension that automates the search process within 
 case management systems. When viewing a case page, the extension automatically:
@@ -46,9 +46,9 @@ case management systems. When viewing a case page, the extension automatically:
 This automation eliminates manual copy-paste operations, reduces errors, and 
 speeds up case resolution workflows.
 
-================================================================================
+                                                                                
 SECTION 2: SYSTEM REQUIREMENTS
-================================================================================
+                                                                                
 
 Component               | Requirement
 ------------------------|----------------------------------------------
@@ -59,9 +59,9 @@ Permissions             | "storage" - only for saving your mode preference
 Disk Space              | Approximately 50 KB
 Dependencies            | None (standalone extension)
 
-================================================================================
+                                                                                
 SECTION 3: INSTALLATION GUIDE
-================================================================================
+                                                                                
 
 3.1 Automatic Configuration (Windows Only)
 
@@ -101,15 +101,15 @@ Step B: Configure contentScript.js
 Open contentScript.js in any text editor.
 
 Find these lines:
-const BASE_URL = "YOUR_DOMAIN_HERE";
-const URL_PATTERN = "YOUR_PATH_HERE";
+const BASE_URL   "YOUR_DOMAIN_HERE";
+const URL_PATTERN   "YOUR_PATH_HERE";
 
 Replace YOUR_DOMAIN_HERE with https:// plus your domain
 Replace YOUR_PATH_HERE with / plus your path plus /
 
 Example result:
-const BASE_URL = "https://cs.yourcompany.com";
-const URL_PATTERN = "/inquiry-center/cases/view/";
+const BASE_URL   "https://cs.yourcompany.com";
+const URL_PATTERN   "/inquiry-center/cases/view/";
 
 Step C: Save both files
 
@@ -125,9 +125,9 @@ Step C: Save both files
 8. The extension "Case Searcher" should appear in your extensions list
 9. The extension icon will appear in the Chrome toolbar
 
-================================================================================
+                                                                                
 SECTION 4: CONFIGURATION REFERENCE
-================================================================================
+                                                                                
 
 manifest.json Settings:
 
@@ -153,9 +153,9 @@ Valid URL Pattern Examples:
 | https://app.company.com/support/tickets/456    | "/support/tickets/"                  |
 | https://internal.company.com/inquiry/789       | "/inquiry/"                          |
 
-================================================================================
+                                                                                
 SECTION 5: DAILY USAGE
-================================================================================
+                                                                                
 
 5.1 Selecting Search Mode
 
@@ -204,9 +204,9 @@ Order Number Extraction - Looks for:
 - If Skill Group is other value: extracts Order Id from Return Info section
 - Numeric sequences with 6 or more digits near Order labels
 
-================================================================================
+                                                                                
 SECTION 6: EXTRACTION LOGIC DETAILS
-================================================================================
+                                                                                
 
 6.1 Customer ID Extraction
 
@@ -256,9 +256,9 @@ The Skill Group field is used to determine the correct extraction method because
 - Return cases have Order Ids in a Return Info section
 - Using the wrong extraction method would return incorrect values
 
-================================================================================
+                                                                                
 SECTION 7: TROUBLESHOOTING
-================================================================================
+                                                                                
 
 7.1 Extension Does Not Activate on Case Pages
 
@@ -359,9 +359,9 @@ Solutions:
 2. Or configure manually using the instructions in Section 3.2
 3. Move the extension folder to a path without spaces (e.g., C:\extensions\)
 
-================================================================================
+                                                                                
 SECTION 8: FREQUENTLY ASKED QUESTIONS
-================================================================================
+                                                                                
 
 Q1: Does the extension store any personal data?
 A1: No. Only the selected search mode (Customer or Order) is stored locally using
@@ -405,9 +405,9 @@ A10: Currently, the extension automatically triggers search. To change this
      behavior, you would need to modify the attemptPasteAndSearch() function in 
      contentScript.js.
 
-================================================================================
+                                                                                
 SECTION 9: CUSTOMIZATION GUIDE
-================================================================================
+                                                                                
 
 9.1 Changing Label Patterns
 
@@ -429,20 +429,20 @@ Replace with: /Client\s*ID\b/i
 Update the findSearchInput() function in contentScript.js:
 
 Default selectors:
-const selectors = [
-  'input[name="SearchTerm"]',
-  'input[placeholder*="Search"]',
-  'input[placeholder*="search"]',
-  'input[aria-label*="Search"]',
-  'input[type="search"]'
+const selectors   [
+  'input[name "SearchTerm"]',
+  'input[placeholder* "Search"]',
+  'input[placeholder* "search"]',
+  'input[aria-label* "Search"]',
+  'input[type "search"]'
 ];
 
 Add your own selector:
-const selectors = [
-  'input[name="YourFieldName"]',
+const selectors   [
+  'input[name "YourFieldName"]',
   '#your-input-id',
   '.your-input-class',
-  'input[placeholder*="YourText"]'
+  'input[placeholder* "YourText"]'
 ];
 
 9.3 Adjusting Search Button Detection
@@ -451,12 +451,12 @@ Update the findSearchButtonNear() function. Add your button selector early in
 the function:
 
 Example addition:
-const btn = document.querySelector('#your-search-button');
-if (btn && btn.offsetParent !== null) return btn;
+const btn   document.querySelector('#your-search-button');
+if (btn && btn.offsetParent !   null) return btn;
 
-================================================================================
+                                                                                
 SECTION 10: SUPPORT
-================================================================================
+                                                                                
 
 Reporting Issues:
 
@@ -473,9 +473,9 @@ Contact Information:
 GitHub Repository: https://github.com/efatananshekh/Smart-Search-Workflow-Automation-Extension
 Open an Issue: https://github.com/efatananshekh/Smart-Search-Workflow-Automation-Extension/issues
 
-================================================================================
+                                                                                
 SECTION 11: VERSION HISTORY
-================================================================================
+                                                                                
 
 Version 1.5 (Current Release)
 ------------------------------
@@ -492,6 +492,6 @@ Version 1.0 (Initial Release)
 - Manual configuration only
 - Basic popup interface
 
-================================================================================
+                                                                                
 END OF MANUAL
-================================================================================
+                                                                                
